@@ -1,0 +1,356 @@
+:root {
+    --primary-font: 'Poppins', sans-serif;
+    --arabic-font: 'Cairo', sans-serif;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #212529;
+    --body-bg-light: #f8f9fa;
+    --body-bg-dark: #121212;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--body-bg-light);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Dark Mode Variables */
+[data-bs-theme="dark"] body {
+    background-color: var(--body-bg-dark);
+}
+
+[data-bs-theme="dark"] .main-card {
+    background-color: var(--card-bg-dark);
+    border: 1px solid #333;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+/* Card Styling */
+.main-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+/* Profile Image */
+.profile-img-container {
+    width: 250px;
+    height: 250px;
+    z-index: 2;
+    background-color: #ddd;
+}
+
+/* Icon Boxes */
+.icon-box {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    font-family: var(--arabic-font);
+    text-align: right;
+}
+
+[dir="rtl"] .text-md-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .me-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important;
+}
+
+[dir="rtl"] .d-md-flex {
+    justify-content: flex-start;
+}
+
+/* Force LTR for phone numbers even in RTL mode */
+.dir-ltr {
+    direction: ltr;
+    unicode-bidi: embed;
+    display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        align-items: flex-start !important;
+    }
+
+    .profile-img-container {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 1rem;
+    }
+
+    .shape-divider {
+        display: none;
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .main-card {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .profile-img-container {
+            animation: zoomIn 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .name-text,
+        .job-title,
+        hr {
+            animation: fadeInUp 0.8s both;
+            animation-delay: 0.2s;
+        }
+
+        .contact-info>div {
+            animation: fadeInUp 0.8s both;
+        }
+
+        .contact-info>div:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .contact-info>div:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .contact-info>div:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .contact-info>div:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .mb-4 {
+            /* Biography container */
+            animation: fadeInUp 0.8s both;
+            animation-delay: 0.7s;
+        }
+
+        :root {
+            --primary-font: 'Poppins', sans-serif;
+            --arabic-font: 'Cairo', sans-serif;
+            --card-bg-light: #ffffff;
+            --card-bg-dark: #212529;
+            --body-bg-light: #f8f9fa;
+            --body-bg-dark: #121212;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--primary-font);
+            background-color: var(--body-bg-light);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        /* Dark Mode Variables */
+        [data-bs-theme="dark"] body {
+            background-color: var(--body-bg-dark);
+        }
+
+        [data-bs-theme="dark"] .main-card {
+            background-color: var(--card-bg-dark);
+            border: 1px solid #333;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+        }
+
+        /* Card Styling */
+        .main-card {
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+
+        /* Profile Image */
+        .profile-img-container {
+            width: 250px;
+            height: 250px;
+            z-index: 2;
+            background-color: #ddd;
+        }
+
+        /* Icon Boxes */
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            font-family: var(--arabic-font);
+            text-align: right;
+        }
+
+        [dir="rtl"] .text-md-start {
+            text-align: right !important;
+        }
+
+        [dir="rtl"] .me-3 {
+            margin-right: 0 !important;
+            margin-left: 1rem !important;
+        }
+
+        [dir="rtl"] .d-md-flex {
+            justify-content: flex-start;
+        }
+
+        /* Force LTR for phone numbers even in RTL mode */
+        .dir-ltr {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 767.98px) {
+            .container {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+                align-items: flex-start !important;
+            }
+
+            .profile-img-container {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 1rem;
+            }
+
+            .shape-divider {
+                display: none;
+            }
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        .main-card {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .profile-img-container {
+            animation: zoomIn 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .name-text,
+        .job-title,
+        hr {
+            animation: fadeInUp 0.8s both;
+            animation-delay: 0.2s;
+        }
+
+        .contact-info>div {
+            animation: fadeInUp 0.8s both;
+        }
+
+        .contact-info>div:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .contact-info>div:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .contact-info>div:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .contact-info>div:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .mb-4 {
+            /* Biography container */
+            animation: fadeInUp 0.8s both;
+            animation-delay: 0.7s;
+        }
+
+        .d-grid {
+            /* Buttons */
+            animation: fadeInUp 0.8s both;
+            animation-delay: 0.8s;
+        }
+
+        /* General text overflow fix */
+        .contact-info span {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
