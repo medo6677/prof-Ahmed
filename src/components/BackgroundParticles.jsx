@@ -7,7 +7,7 @@ const BackgroundParticles = () => {
     const container = document.getElementById('particles')
     if (!container) return
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 15; i++) {
       const particle = document.createElement('div')
       
       // Random properties
@@ -29,8 +29,9 @@ const BackgroundParticles = () => {
       particle.style.opacity = opacity
       particle.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.5)'
       
-      // Animation
+      // Animation & Performance
       particle.style.animation = `particle-drift ${duration}s linear infinite ${delay}s`
+      particle.style.willChange = 'transform, opacity'
       
       container.appendChild(particle)
     }
@@ -42,10 +43,10 @@ const BackgroundParticles = () => {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 transition-colors duration-1000 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 light:from-blue-50 light:via-indigo-100 light:to-purple-50">
-      {/* Decorative Orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[120px] orb-1 mix-blend-screen" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px] orb-2 mix-blend-screen" />
-      <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] rounded-full bg-indigo-500/15 blur-[100px] orb-3 mix-blend-screen" />
+      {/* Decorative Orbs - Optimized without mix-blend-mode */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[100px] orb-1 opacity-80" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[100px] orb-2 opacity-80" />
+      <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] rounded-full bg-indigo-500/15 blur-[80px] orb-3 opacity-80" />
       
       {/* Dynamic Particles Container */}
       <div id="particles" className="absolute inset-0" />
