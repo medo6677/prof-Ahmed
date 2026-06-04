@@ -43,16 +43,16 @@ const BackgroundParticles = () => {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 transition-colors duration-1000 dark:from-slate-900 dark:via-indigo-950 dark:to-slate-900 light:from-blue-50 light:via-indigo-100 light:to-purple-50">
-      {/* Decorative Orbs - Optimized without mix-blend-mode */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[100px] orb-1 opacity-80" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[100px] orb-2 opacity-80" />
-      <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] rounded-full bg-indigo-500/15 blur-[80px] orb-3 opacity-80" />
+      {/* Decorative Orbs - Optimized using pure radial gradients without CSS filters */}
+      <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.2)_0%,rgba(0,0,0,0)_70%)] orb-1" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[80%] h-[80%] bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.2)_0%,rgba(0,0,0,0)_70%)] orb-2" />
+      <div className="absolute top-[20%] right-[10%] w-[60%] h-[60%] bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.15)_0%,rgba(0,0,0,0)_70%)] orb-3" />
       
-      {/* Dynamic Particles Container */}
-      <div id="particles" className="absolute inset-0" />
+      {/* Dynamic Particles Container (Hidden on mobile for performance) */}
+      <div id="particles" className="absolute inset-0 hidden md:block" />
       
       {/* Glass Overlay for depth */}
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px] dark:bg-black/10" />
+      <div className="absolute inset-0 bg-white/5 dark:bg-black/10" />
     </div>
   )
 }
