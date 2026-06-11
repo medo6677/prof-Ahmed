@@ -8,7 +8,7 @@ const GlassCard = () => {
   const { t } = useTranslation()
 
   const contactInfo = [
-    { type: 'phone', values: ['+97333766285', '+97338976204', '+201061837260'], label: t('phone') },
+    { type: 'phone', values: ['+201061837260'], label: t('phone') },
     { type: 'email', values: ['ahmed.abdelfatah@fsed.bu.edu.eg', 'ahmedabdelfattah2050@gmail.com', 'ahmedabdelfattah2010@yahoo.com'], label: t('email') },
     { type: 'address', values: t('addressValue'), label: t('address') },
     { type: 'dob', values: t('dobValue'), label: t('dob') },
